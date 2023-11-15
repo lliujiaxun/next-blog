@@ -6,9 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
     "prettier": "prettier --write .",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint": "next lint && lint-staged --allow-empty"
   },
   "dependencies": {
     "next": "14.0.2",
@@ -27,10 +27,24 @@
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.1",
     "husky": "^8.0.3",
+    "lint-staged": "^15.1.0",
     "postcss": "^8",
     "prettier": "^3.1.0",
     "prettier-eslint-cli": "^8.0.1",
     "tailwindcss": "^3.3.0",
     "typescript": "^5"
+  },
+  "lint-staged": {
+    "src/**/!(*.min).js": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "src/**/*.{ts,vue}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "src/**/*.{ts,js,vue,html,css,scss,sass,stylus}": [
+      "prettier --write"
+    ]
   }
 }
