@@ -1,4 +1,65 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-npx --no -- commitlint --edit "$1"
+# npx --no -- commitlint --edit "$1"
+# 获取当前提交的 commit msg
+# commit_msg=`cat $1`
+
+# msg_re="^(🎉 init|✨ feat|🐞 fix|locale|ui|🎈 perf|🦄 refactor|📃 docs|🌈 style|🧪 test|🔧 build|↩ revert|🐎 ci|🐳 chore|release)(\(.+\))?:.{1,100}"
+
+# echo ""
+# echo "commit message: $commit_msg"
+# echo ""
+
+# if [[ ! $commit_msg =~ $msg_re ]]
+# then
+# 	echo "-----------------------------------------------------------------"
+# 	echo "不合法的 commit 消息提交格式，请使用正确的格式:"
+# 	echo ""
+#     echo "    	🎉 init:	项目初始化"
+
+# 	echo "-----------------------------------------------------------------"
+# 	# 异常退出
+# 	exit 1
+# fi
+
+#    {
+#      label: '✨ feat',
+#      detail: 'Select when creating new things',
+#    },
+#    {
+#      label: '🐞 fix',
+#      detail: 'Select when fixing a bug',
+#    },
+#    {
+#      label: '📄 docs',
+#      detail: 'Select when editing documentation',
+#    },
+#    {
+#      label: '🚀 ci',
+#      detail: 'Select when editing CI scripts',
+#    },
+#    {
+#      label: '🖥️ build',
+#      detail: 'Select when concerning build change or external dependencies',
+#    },
+#    {
+#      label: '⚙️ refactor',
+#      detail: 'Select when no new performances or no new functionnality',
+#    },
+#    {
+#      label: '🌈 style',
+#      detail: 'Select when working on code style',
+#    },
+#    {
+#      label: '⚡ perf',
+#      detail: 'Select when working on performances',
+#    },
+#    {
+#      label: '⏪ revert',
+#      detail: 'Select when going back',
+#    },
+#    {
+#      label: '🔵 test',
+#      detail: 'Select when adding or editing tests',
+#    },
