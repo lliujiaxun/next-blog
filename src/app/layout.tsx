@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import Header from 'src/components/ui/layout/header'
 import Footer from 'src/components/ui/layout/footer'
+import ParticlesBackground from 'src/components/ui/layout/particles'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,6 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         {children}
         <Footer />
+        <ParticlesBackground />
       </body>
     </html>
   )

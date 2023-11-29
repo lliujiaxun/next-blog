@@ -7,7 +7,8 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  background-color: var(--background-color);
+  height: var(--header-h);
+  background-color: #fff;
   box-shadow: var(--box-shadow);
   .logo {
     display: flex;
@@ -21,5 +22,34 @@
   }
   .links {
     display: flex;
+  }
+  .search {
+    display: flex;
+    width: 220px;
+  }
+  .nav {
+    .navList {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      justify-content: flex-end;
+      .navItem {
+        font-size: 12px;
+        margin-right: 12px;
+        color: var(--text-color);
+        &:hover {
+          color: var(--primary);
+        }
+        &.active {
+          color: var(--primary);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 719px) {
+  .nav {
+    display: none;
   }
 }
