@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import './globals.css'
+import './globals.scss'
 import Header from 'src/components/ui/layout/header'
 import Footer from 'src/components/ui/layout/footer'
 import ParticlesBackground from 'src/components/ui/layout/particles'
