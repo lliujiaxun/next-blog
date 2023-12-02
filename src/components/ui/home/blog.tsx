@@ -1,16 +1,36 @@
 import Image from 'next/image'
 import style from './home.module.scss'
 import Flex from 'src/components/ui/layout/flex'
-export default function Blog() {
+import Link from 'next/link'
+export default function Blog({ data }: { data: BlogItem }) {
+  const tags = data.tags?.split(',') || []
   return (
-    <Flex className={style.blog}>
-      <div className={style.thumb}>
-        <Image alt="" src="/image/blog.jpg" width={300} height={200} className="img" />
-      </div>
-      <Flex className={style.info} direction="column" justify="space-between">
-        <div className={style.title}>vite 别名配置注意事项</div>
-        <div className={style.desc}>vite 别名配置注意事项</div>
+    <Link href={`/blog/${data.id}`}>
+      <Flex className={style.blog}>
+        <div className={style.thumb}>
+          <Image alt="" src="/image/blog.jpg" width={300} height={200} className="img" />
+        </div>
+        <Flex className={style.info} direction="column" justify="space-between">
+          <div>
+            <div className={style.title}>{data.title}</div>
+            <div className={style.tags}>
+              {tags.map(tag => (
+                <span key={tag} className={style.tag}>
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div className={style.desc}>
+            <Flex justify="space-between">
+              <div>
+                <div className={style.user}>{data.author}</div>
+              </div>
+              <div className={style.date}>{data.date}</div>
+            </Flex>
+          </div>
+        </Flex>
       </Flex>
-    </Flex>
+    </Link>
   )
 }

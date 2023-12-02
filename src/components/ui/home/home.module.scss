@@ -16,22 +16,65 @@
         transform: scale(1.2);
       }
     }
+    .info {
+      .title {
+        color: var(--primary);
+        &::before {
+          transform: scale(1);
+        }
+      }
+    }
   }
   &:last-child {
     margin-bottom: 0;
   }
   .thumb {
     width: 300px;
-    height: 200px;
+    height: 160px;
     overflow: hidden;
     img {
-      transition: all 1s;
+      transition: all 0.6s;
     }
   }
   .info {
     padding: 10px 20px;
+    width: 100%;
     .title {
+      color: var(--text-color);
       font-size: 24px;
+      display: inline-block;
+      position: relative;
+      &::before {
+        position: absolute;
+        width: 100%;
+        content: '';
+        height: 3px;
+        background-color: var(--primary);
+        bottom: 0px;
+        left: 0;
+        transform: scale(0);
+        transition: all 0.3s ease-in-out;
+      }
+      &:hover {
+        color: var(--primary);
+        &::before {
+          transform: scale(1);
+        }
+      }
+    }
+    .tags {
+      font-size: 12px;
+      margin-top: 4px;
+      .tag {
+        color: var(--text-color-gray);
+        margin-right: 10px;
+        &:hover {
+          color: var(--primary);
+        }
+      }
+    }
+    .desc {
+      color: var(--text-color-gray);
     }
   }
 }
