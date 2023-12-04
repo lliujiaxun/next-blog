@@ -19,6 +19,7 @@ export const getBlogDetail = (fileName: string) => {
 }
 export const getAllBlog = () => {
   const allBlogPath = fs.readdirSync(BLOG_BASE_PATH)
+  console.log(allBlogPath, 'fileName')
   const data = allBlogPath.map(item => getBlogDetail(item))
   return data
 }

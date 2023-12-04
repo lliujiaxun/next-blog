@@ -27,7 +27,6 @@ const getBlogDetailById = async id => {
   try {
     const promise = await fetch(`http://localhost:3000/api/blog/${id}`)
     const data = await promise.json()
-    console.log(data, 'hhh')
     return data
   } catch (error) {
     return {}
