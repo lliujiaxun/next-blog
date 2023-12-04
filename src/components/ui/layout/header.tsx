@@ -18,9 +18,9 @@ export default function Header() {
           <ul className={style.navList}>
             <Link href="/">
               <li className={style.navItem}>
-                <div className={style.icon}>
+                {/* <div className={style.icon}>
                   <img />
-                </div>
+                </div> */}
                 <span>主页</span>
               </li>
             </Link>

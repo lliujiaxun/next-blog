@@ -5,12 +5,10 @@ import Flex from 'src/components/ui/layout/flex'
 export default async function Home() {
   const blogList = await getBlogList()
   return (
-    <main>
-      <Flex className="mt-5">
-        <BlogList list={blogList} />
-        <Info />
-      </Flex>
-    </main>
+    <Flex className="mt-5">
+      <BlogList list={blogList} />
+      <Info />
+    </Flex>
   )
 }
 

@@ -2,7 +2,7 @@ import Image from 'next/image'
 import style from './home.module.scss'
 import Flex from 'src/components/ui/layout/flex'
 import Link from 'next/link'
-export default function Blog({ data }: { data: BlogItem }) {
+export default function Blog({ data }: { data: any }) {
   const tags = data.tags?.split(',') || []
   return (
     <Link href={`/blog/${data.id}`}>

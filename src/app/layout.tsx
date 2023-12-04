@@ -1,11 +1,8 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import './globals.scss'
 import Header from 'src/components/ui/layout/header'
 import Footer from 'src/components/ui/layout/footer'
 import ParticlesBackground from 'src/components/ui/layout/particles'
-
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -15,9 +12,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body>
         <Header />
-        {children}
+        <main>{children}</main>
         <Footer />
         <ParticlesBackground />
       </body>

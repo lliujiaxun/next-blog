@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useCallback, useEffect, useRef } from 'react'
+import React, { useCallback } from 'react'
 import style from './particles.module.scss'
 import Particles from 'react-particles'
 import { loadFull } from 'tsparticles'

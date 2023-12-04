@@ -7,11 +7,11 @@ tags: alias,vite,vue, vue配置, vue.config.js
 date: 2023-12-01
 ---
 
-# vite 别名配置注意事项
+### vite 别名配置注意事项
 
-## 需要注意两点
+#### 需要注意两点
 
-```js
+```javascript
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import * as path from 'path'
@@ -35,3 +35,4 @@ export default defineConfig({
   }
 })
 ```
+                   
