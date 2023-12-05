@@ -20,7 +20,7 @@ export default async function Home() {
 
 async function getBlogList() {
   try {
-    const promise = await fetch(`${API_HOST}/api/blog/list`)
+    const promise = await fetch(`${API_HOST}/api/blog/list`, { next: { revalidate: 60 } })
     const data = await promise.json()
     return data?.blogList || []
   } catch (error) {
