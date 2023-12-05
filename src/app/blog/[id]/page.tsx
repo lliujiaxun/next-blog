@@ -1,6 +1,7 @@
 import Flex from 'src/components/ui/layout/flex'
 import style from './page.module.scss'
 import MarkdownView from 'src/components/markdown'
+import { API_HOST } from 'src/constant'
 
 export default async function BlogDetail({ params }: any) {
   const { id } = params
@@ -25,7 +26,7 @@ export default async function BlogDetail({ params }: any) {
 
 const getBlogDetailById = async (id: any) => {
   try {
-    const promise = await fetch(`http://localhost:3000/api/blog/${id}`)
+    const promise = await fetch(`${API_HOST}/api/blog/${id}`)
     const data = await promise.json()
     return data
   } catch (error) {

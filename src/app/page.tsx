@@ -1,6 +1,7 @@
 import BlogList from 'src/components/ui/home/blog-list'
 import Info from 'src/components/ui/home/info'
 import Flex from 'src/components/ui/layout/flex'
+import { API_HOST } from 'src/constant'
 
 export default async function Home() {
   const blogList = await getBlogList()
@@ -19,7 +20,7 @@ export default async function Home() {
 
 async function getBlogList() {
   try {
-    const promise = await fetch('http://localhost:3000/api/blog/list')
+    const promise = await fetch(`${API_HOST}/api/blog/list`)
     const data = await promise.json()
     return data?.blogList || []
   } catch (error) {

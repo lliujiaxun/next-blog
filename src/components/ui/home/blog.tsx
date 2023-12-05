@@ -5,7 +5,7 @@ import Link from 'next/link'
 export default function Blog({ data }: { data: any }) {
   const tags = data.tags?.split(',') || []
   return (
-    <Link href={`/blog/${data.id}`}>
+    <Link href={`/blog/${data.id}`} className={style.link}>
       <Flex className={style.blog}>
         <div className={style.thumb}>
           <Image alt="" src="/image/blog.jpg" width={300} height={200} className="img" />
