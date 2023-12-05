@@ -2,23 +2,30 @@ import Flex from 'src/components/ui/layout/flex'
 import style from './page.module.scss'
 import MarkdownView from 'src/components/markdown'
 import { API_HOST } from 'src/constant'
+import { getAllBlog } from '../../../../lib/utils'
 
 export default async function BlogDetail({ params }: any) {
   const { id } = params
-  const detail = await getBlogDetailById(id)
+  // const detail = await getBlogDetailById(id)
+
+  const data = getAllBlog()
+  const detail: any = data.find((item: any) => {
+    return item.id == id
+  })
+
   return (
     <>
       <div className={style.page_title}>
-        <h1 className={style.title}>{detail.title}</h1>
+        <h1 className={style.title}>{detail?.title}</h1>
         <Flex className={style.desc}>
-          <div className="mr-10">{detail.author}</div>
-          <div className="mr-10">{detail.view}</div>
-          <div className="mr-10">{detail.date}</div>
-          <div className={style.tags}>{detail.tags?.split(',').map((tag: any) => <span key={tag}></span>)}</div>
+          <div className="mr-10">{detail?.author}</div>
+          <div className="mr-10">{detail?.view}</div>
+          <div className="mr-10">{detail?.date}</div>
+          <div className={style.tags}>{detail?.tags?.split(',').map((tag: any) => <span key={tag}></span>)}</div>
         </Flex>
       </div>
       <div className={style.content}>
-        <MarkdownView>{detail.content}</MarkdownView>
+        <MarkdownView>{detail?.content}</MarkdownView>
       </div>
     </>
   )
