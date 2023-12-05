@@ -21,6 +21,7 @@ export default async function Home() {
 async function getBlogList() {
   try {
     console.log(API_HOST, '--cs')
+    console.log(process.env.API_HOST, '--APIS')
     const promise = await fetch(`${API_HOST}/api/blog/list`, { next: { revalidate: 0 } })
     const data = await promise.json()
     return data?.blogList || []
