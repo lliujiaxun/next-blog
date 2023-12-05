@@ -14,7 +14,7 @@ export default function Blog({ data }: { data: any }) {
           <div>
             <div className={style.title}>{data.title}</div>
             <div className={style.tags}>
-              {tags.map(tag => (
+              {tags.map((tag: any) => (
                 <span key={tag} className={style.tag}>
                   {tag}
                 </span>

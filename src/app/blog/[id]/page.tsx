@@ -2,7 +2,7 @@ import Flex from 'src/components/ui/layout/flex'
 import style from './page.module.scss'
 import MarkdownView from 'src/components/markdown'
 
-export default async function BlogDetail({ params }) {
+export default async function BlogDetail({ params }: any) {
   const { id } = params
   const detail = await getBlogDetailById(id)
   return (
@@ -13,7 +13,7 @@ export default async function BlogDetail({ params }) {
           <div className="mr-10">{detail.author}</div>
           <div className="mr-10">{detail.view}</div>
           <div className="mr-10">{detail.date}</div>
-          <div className={style.tags}>{detail.tags?.split(',').map(tag => <span key={tag}></span>)}</div>
+          <div className={style.tags}>{detail.tags?.split(',').map((tag: any) => <span key={tag}></span>)}</div>
         </Flex>
       </div>
       <div className={style.content}>
@@ -23,7 +23,7 @@ export default async function BlogDetail({ params }) {
   )
 }
 
-const getBlogDetailById = async id => {
+const getBlogDetailById = async (id: any) => {
   try {
     const promise = await fetch(`http://localhost:3000/api/blog/${id}`)
     const data = await promise.json()
